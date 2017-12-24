@@ -1,0 +1,86 @@
+<h1>My Cluster API</h1>
+
+<section class="insert">
+    <div class="cluster">
+        <fieldset class="c-container">
+            <legend>Add a cluster:</legend>
+            <form action="/insert" method="post">
+                <div class="input-area">
+                    <label for="name">Cluster Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Cluster Name">
+                    <label for="url">Cluster Url:</label>
+                    <input type="text" id="url" name="url" placeholder="Url">
+                </div>
+                <hr>
+                <button type="submit" class="btn-add" id="btn-add">Add</button>
+            </form>
+        </fieldset>
+    </div>
+</section>
+
+<section class="get-data">
+    <div class="cluster">
+        <fieldset class="c-container">
+            <legend>View all the Clusters:</legend>
+            <form action="/get-data" method="post">
+                <div class="input-area">
+                    <div>
+                        {{# each items }}
+                            <article class="item">
+                                <div><i>Name:</i> {{ this.name }}</div>
+                                <div><i>Url:</i> {{ this.url }}</div>
+                                <div><i>Id:</i> {{this.id}} </div>
+                            </article>
+                            <hr>
+                        {{/each}}
+                    </div>
+                </div>
+                <a href="/get-data" class="btn-get">Get</a>
+            </form>
+        </fieldset>
+    </div>
+</section>
+
+<section class="update">
+    <div class="cluster">
+        <fieldset class="c-container">
+            <legend>Update a Cluster:</legend>
+            <form action="/update" method="post">
+                <div class="input-area">
+                    <label for="name">Cluster Id:</label>
+                    <input type="text" id="id" name="id" placeholder="Id">
+                    <label for="url">Cluster Url:</label>
+                    <input type="text" id="url" name="url" placeholder="Url">
+                    <label for="name">Cluster Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Cluster Name">
+                </div>
+                <hr>
+                <button type="submit" class="btn-update" id="btn-update">Update</button>
+            </form>
+        </fieldset>
+    </div>
+</section>
+
+<section class="delete">
+    <div class="cluster">
+        <fieldset class="c-container">
+            <legend>Delete a Cluster:</legend>
+            <form action="/delete" method="post">
+                <div class="input-area">
+                    <label for="name">Cluster Id:</label>
+                    <input type="text" id="id" name="id" placeholder="Id">
+                </div>
+                <hr>
+                <button type="submit" class="btn-delete" id="btn-delete">Delete</button>
+            </form>
+        </fieldset>
+    </div>
+</section>
+
+
+
+
+
+
+
+
